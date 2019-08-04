@@ -1,7 +1,7 @@
 {
-  "name": "reactor",
+  "name": "@cinematix/reactor",
   "version": "1.0.0",
-  "description": "reactor React component",
+  "description": "useReactor hook for using RxJS with React Hooks",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -21,16 +21,21 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "react": "^16.0.0",
+    "rxjs": "^6.0.0"
   },
   "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "nwb": "0.23.x",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rxjs": "^6.5.2"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "repository": "",
   "keywords": [
     "react-component"
