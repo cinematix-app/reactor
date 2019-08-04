@@ -85,6 +85,6 @@ next('hello!');
 
 Since the `reactor` only needs an instance of `Subject` a different subject can be returned:
 ```javascript
-useReactor(() => new BehavoirSubject('hello!'), value => console.log(value));
+useReactor(() => new BehaviorSubject('hello!'), value => console.log(value));
 // hello!
 ```
