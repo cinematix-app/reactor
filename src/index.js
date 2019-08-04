@@ -1,4 +1,4 @@
-import { useMemo, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { Subject } from 'rxjs';
 
 /**
@@ -9,7 +9,13 @@ import { Subject } from 'rxjs';
  * @param {array} inputs items that will be emitted to the reactor when any of them change.
  */
 export default function useReactor(reaction, dispatch, inputs = []) {
-  const { current: subject } = useRef(useMemo(() => reaction(new Subject()), []));
+  const subjectRef = useRef();
+
+  if (!subjectRef.current) {
+    subjectRef.current = reaction(new Subject());
+  }
+
+  const { current: subject } = subjectRef;
 
   useEffect(() => {
       const sub = subject.subscribe(dispatch);
