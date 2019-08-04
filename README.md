@@ -3,7 +3,7 @@ A React Hook for using RxJS with React.
 
 ## Usage
 ```javascript
-useReactor((value$) => (
+useReactor(value$ => (
     value$.pipe(
         // Whatever you want to do, but the end result will be passed to the dispatch callback.
     )
@@ -44,7 +44,7 @@ function AwesomeSearch() {
         dispatch({ action: 'CHANGE', name, value, });
     };
 
-    useReactor((value$) => (
+    useReactor(value$ => (
         value$.pipe(
             // Whatever you want to do, but the end result will be passed to the dispatch callback.
         )
