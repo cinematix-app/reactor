@@ -1,6 +1,6 @@
 {
   "name": "@cinematix/reactor",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "useReactor hook for using RxJS with React Hooks",
   "repository": "github:cinematix-app/reactor",
   "main": "lib/index.js",
