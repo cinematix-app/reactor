@@ -7,7 +7,7 @@ useReactor((value$) => (
     value$.pipe(
         // Whatever you want to do, but the end result will be passed to the dispatch callback.
     )
-), dispatch, [state.search]);
+), dispatch, [state.someValueToWatch]);
 ```
 
 ## Example
