@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react';
 import { Subject } from 'rxjs';
 
 /**
@@ -18,13 +18,13 @@ export default function useReactor(reaction, dispatch, inputs = []) {
   const { current: subject } = subjectRef;
 
   useEffect(() => {
-      const sub = subject.subscribe(dispatch);
+    const sub = subject.subscribe(dispatch);
 
-      return () => sub.unsubscribe();
+    return () => sub.unsubscribe();
   }, []);
 
   useEffect(() => {
-      inputs.map(input => subject.next(input));
+    inputs.map(input => subject.next(input));
   }, inputs);
 
   return subject;
