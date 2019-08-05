@@ -91,5 +91,5 @@ useReactor(() => new BehaviorSubject('hello!'), value => console.log(value));
 ```
 
 ## Migrating from 1.x
-* The third parameter has been changed. An input of a scalar will emit a scalar, an input of an array will emit an array. In most instances changeing
+* The third parameter has been changed. An input of a scalar will emit a scalar, an input of an array will emit an array. In most instances changing
   `useReactor(searchReactor, dispatch, [state.search])` to `useReactor(searchReactor, dispatch, state.search)` is sufficient.
