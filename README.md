@@ -7,7 +7,7 @@ useReactor(value$ => (
     value$.pipe(
         // Whatever you want to do, but the end result will be passed to the dispatch callback.
     )
-), dispatch, [state.someValueToWatch]);
+), dispatch, state.someValueToWatch);
 ```
 
 ## Example
@@ -48,7 +48,7 @@ function AwesomeSearch() {
         value$.pipe(
             // Whatever you want to do, but the end result will be passed to the dispatch callback.
         )
-    ), dispatch, [state.search]);
+    ), dispatch, state.search);
 
     return (
         <div>
