@@ -183,7 +183,7 @@ function Demo() {
     dispatch({ type: 'CHANGE', name, value });
   };
 
-  useReactor(searchReactor, dispatch, [state.search]);
+  useReactor(searchReactor, dispatch, state.search);
 
   return (
     <div>

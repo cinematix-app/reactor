@@ -6,9 +6,10 @@ import { Subject } from 'rxjs';
  *
  * @param {callback} reaction Must return an instance of Subject
  * @param {callback} dispatch Will be called with the result of the reactor.
- * @param {array} inputs items that will be emitted to the reactor when any of them change.
+ * @param {any} input Item or an array of items that will be emitted to the reactor when any of them change.
+ *                    The item or items will be compared shallowly to determine if a new emit should take place.
  */
-export default function useReactor(reaction, dispatch, inputs = []) {
+export default function useReactor(reaction, dispatch, input) {
   const subjectRef = useRef();
 
   if (!subjectRef.current) {
@@ -23,8 +24,15 @@ export default function useReactor(reaction, dispatch, inputs = []) {
     return () => sub.unsubscribe();
   }, []);
 
+  let inputs = [];
+  if (typeof input !== 'undefined') {
+    inputs = Array.isArray(input) ? input : [input];
+  }
+
   useEffect(() => {
-    inputs.map(input => subject.next(input));
+    if (typeof input !== 'undefined') {
+      subject.next(input);
+    }
   }, inputs);
 
   return subject;
