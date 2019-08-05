@@ -69,12 +69,13 @@ function AwesomeSearch() {
 useReactor(
     reaction: (value$: Subject) => Subject,
     dispatch: (value: any) => void,
-    inputs: Array<any> = []
+    input: any | Array<any> = undefined
 ): Subject
 ```
 * `reaction` is a function that returns an instance of `Subject`
 * `dispatch` is a function that is called with the result of the reactor. It is the callback to `Subject.subscribe()`. It is best to end the observable sequence with action objects, but anything can be returned.
-* `inputs` is an array of data to emit when **any** of the items in the array have changed. Each item will be emitted seperately. This is best to be a single item, but can be anything and is optional.
+* `input` is a single item or an array of items of data to emit. When any of the items have changed, the entire list will be emitted. Internally, this value is converted to an array (or used as is) and passed to
+          `useEffect()`.
 
 The `Subject` that is returned can be used to emit values manually:
 ```javascript
@@ -88,3 +89,7 @@ Since the `reactor` only needs an instance of `Subject` a different subject can 
 useReactor(() => new BehaviorSubject('hello!'), value => console.log(value));
 // hello!
 ```
+
+## Migrating from 1.x
+* The third parameter has been changed. An input of a scalar will emit a scalar, an input of an array will emit an array. In most instances changeing
+  `useReactor(searchReactor, dispatch, [state.search])` to `useReactor(searchReactor, dispatch, state.search)` is sufficient.
