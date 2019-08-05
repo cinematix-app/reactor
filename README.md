@@ -69,7 +69,7 @@ function AwesomeSearch() {
 useReactor(
     reaction: (value$: Subject) => Subject,
     dispatch: (value: any) => void,
-    input: any | Array<any> = undefined
+    input?: any | Array<any>
 ): Subject
 ```
 * `reaction` is a function that returns an instance of `Subject`
