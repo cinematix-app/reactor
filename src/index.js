@@ -22,7 +22,9 @@ export default function useReactor(reaction, dispatch, input) {
     const sub = subject.subscribe(dispatch);
 
     return () => sub.unsubscribe();
-  }, []);
+  }, [
+    dispatch,
+  ]);
 
   let inputs = [];
   if (typeof input !== 'undefined') {
