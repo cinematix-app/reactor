@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "nwb": "0.23.x",
+    "nwb": "0.25.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rxjs": "^6.5.2"
